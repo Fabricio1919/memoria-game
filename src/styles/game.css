@@ -1,0 +1,138 @@
+main {
+  display: flex; /* Usa Flexbox para o layout principal */
+  flex-direction: column; /* Organiza os itens em coluna */
+  width: 100%; /* Define a largura total do elemento */
+  background-image: url("../images/bg.jpg"); /* Define a imagem de fundo */
+  background-size: cover; /* Faz a imagem de fundo cobrir toda a área disponível */
+  min-height: 100vh; /* Define a altura mínima como 100% da altura da viewport */
+  align-items: center; /* Centraliza os itens horizontalmente */
+  justify-content: center; /* Centraliza os itens verticalmente */
+  padding: 20px; /* Adiciona preenchimento ao redor do conteúdo */
+  box-sizing: border-box; /* Inclui o padding na largura total do elemento */
+}
+
+header {
+  display: flex; /* Usa Flexbox para o layout do cabeçalho */
+  align-items: center; /* Alinha os itens verticalmente ao centro */
+  justify-content: space-between; /* Distribui os itens com espaço entre eles */
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.8
+  ); /* Cor de fundo branca semi-transparente */
+  font-size: 1.2em; /* Tamanho da fonte */
+  width: 100%; /* Largura total do cabeçalho */
+  max-width: 800px; /* Largura máxima do cabeçalho */
+  padding: 20px; /* Preenchimento ao redor do cabeçalho */
+  margin: 0 0 30px; /* Margens inferiores */
+  border-radius: 5px; /* Arredonda os cantos do cabeçalho */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adiciona sombra ao cabeçalho para destaque */
+}
+
+.grid {
+  display: grid; /* Usa CSS Grid para o layout da grade */
+  grid-template-columns: repeat(7, 1fr); /* Define 7 colunas de igual largura */
+  gap: 15px; /* Espaço entre os itens da grade */
+  width: 100%; /* Largura total da grade */
+  max-width: 1200px; /* Largura máxima da grade */
+  margin: 0 auto; /* Centraliza a grade horizontalmente */
+  padding: 0 10px; /* Preenchimento lateral para melhor espaçamento em telas menores */
+}
+
+.card {
+  aspect-ratio: 3/4; /* Proporção da carta */
+  width: 100%; /* Largura total da carta */
+  border-radius: 5px; /* Arredonda os cantos da carta */
+  position: relative; /* Posição relativa para posicionamento absoluto de filhos */
+  transition: all 400ms ease; /* Transição suave para todas as propriedades */
+  transform-style: preserve-3d; /* Permite que a carta preserve o espaço 3D */
+  background-color: #ccc; /* Cor de fundo padrão da carta */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15); /* Sombra à carta */
+}
+
+.face {
+  width: 100%; /* Largura total da face da carta */
+  height: 100%; /* Altura total da face da carta */
+  position: absolute; /* Posição absoluta dentro da carta */
+  background-size: cover; /* Faz o fundo da face cobrir toda a área */
+  background-position: center; /* Centraliza a imagem de fundo */
+  border: 5px solid #00b5cc; /* Borda ao redor da face */
+  border-radius: 5px; /* Arredonda os cantos da face */
+  transition: all 400ms ease; /* Transição suave para todas as propriedades */
+}
+
+.front {
+  transform: rotateY(180deg); /* Gira a face da carta 180 graus no eixo Y */
+}
+
+.back {
+  background-image: url("../images/back.png"); /* Imagem de fundo para o verso da carta */
+  backface-visibility: hidden; /* Esconde a parte de trás da carta quando girada */
+}
+
+.reveal-card {
+  transform: rotateY(180deg); /* Gira a carta para revelar a face oposta */
+}
+
+.disabled-card {
+  filter: saturate(0); /* Desatura a carta para dar aparência desativada */
+  opacity: 0.5; /* Reduz a opacidade da carta */
+}
+
+/* Estilos responsivos */
+@media screen and (max-width: 920px) {
+  .grid {
+    grid-template-columns: repeat(5, 1fr); /* 5 colunas em telas menores */
+  }
+
+  header {
+    font-size: 1em; /* Reduz o tamanho da fonte */
+    padding: 15px; /* Reduz o preenchimento */
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .grid {
+    grid-template-columns: repeat(4, 1fr); /* 4 colunas em telas móveis */
+  }
+
+  header {
+    flex-direction: column; /* Alinha os itens do cabeçalho em coluna */
+    align-items: flex-start; /* Alinha os itens à esquerda */
+    padding: 10px; /* Reduz o preenchimento */
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .grid {
+    grid-template-columns: repeat(
+      2,
+      1fr
+    ); /* 2 colunas em telas muito pequenas */
+  }
+
+  header {
+    font-size: 0.9em; /* Reduzindo ainda mais a fonte */
+    padding: 8px; /* Reduzindo o padding */
+  }
+}
+
+.login__button {
+  background-color: #b2df28; /* Define a cor de fundo do botão */
+  border: none; /* Remove a borda padrão do botão */
+  border-radius: 8px; /* Arredonda os cantos do botão */
+  color: #fff; /* Define a cor do texto do botão como branco */
+  cursor: pointer; /* Muda o cursor para indicar que o botão é clicável */
+  font-size: 1.1em; /* Aumenta o tamanho da fonte do botão */
+  padding: 15px; /* Adiciona espaço interno ao botão */
+  width: 100%; /* Define a largura total do botão */
+  transition: background-color 0.3s, transform 0.2s; /* Transições suaves para cor e transformação do botão */
+}
+
+.login__button:hover {
+  background-color: #00a19c; /* Altera a cor ao passar o mouse sobre o botão */
+  transform: translateY(
+    -2px
+  ); /* Eleva ligeiramente o botão ao passar o mouse */
+}

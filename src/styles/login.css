@@ -1,0 +1,107 @@
+body {
+  margin: 0; /* Remove a margem padrão do corpo */
+  padding: 0; /* Remove o preenchimento padrão do corpo */
+  font-family: "Arial", sans-serif; /* Define a fonte usada no corpo */
+  background: url("../images/bg.jpg") no-repeat center center fixed; /* Define uma imagem de fundo que não se repete, centralizada e fixa */
+  background-size: cover; /* Faz a imagem de fundo cobrir toda a área disponível */
+  height: 100vh; /* Define a altura do corpo como 100% da altura da viewport */
+  position: relative; /* Permite que elementos filhos sejam posicionados em relação ao corpo */
+}
+
+.login-container {
+  background-color: rgb(
+    255,
+    255,
+    255
+  ); /* Define a cor de fundo do contêiner como branco */
+  border-radius: 15px; /* Arredonda os cantos do contêiner */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Aplica uma sombra ao contêiner */
+  padding: 30px; /* Adiciona espaço interno ao contêiner */
+  width: 90%; /* Define a largura do contêiner como 90% da largura do pai */
+  max-width: 400px; /* Define a largura máxima do contêiner como 400 pixels */
+  position: absolute; /* Permite o posicionamento absoluto do contêiner */
+  top: 50%; /* Move o contêiner para 50% da altura do contêiner pai */
+  left: 50%; /* Move o contêiner para 50% da largura do contêiner pai */
+  transform: translate(
+    -50%,
+    -50%
+  ); /* Centraliza o contêiner movendo-o para cima e para a esquerda */
+}
+
+.login__header {
+  display: flex; /* Usa o layout Flexbox */
+  flex-direction: column; /* Organiza os itens em coluna */
+  align-items: center; /* Centraliza os itens horizontalmente */
+  margin-bottom: 20px; /* Adiciona uma margem abaixo do cabeçalho */
+}
+
+.login__header img {
+  width: 250px; /* Define a largura da imagem do cabeçalho */
+  margin-bottom: 15px; /* Adiciona uma margem abaixo da imagem */
+}
+
+.login__header h1 {
+  color: #333; /* Define a cor do texto do título como cinza escuro */
+  font-size: 2em; /* Aumenta o tamanho da fonte do título */
+  margin: 0; /* Remove a margem padrão do título */
+}
+
+.login-form {
+  display: flex; /* Usa o layout Flexbox */
+  flex-direction: column; /* Organiza os itens em coluna */
+  align-items: center; /* Centraliza os itens horizontalmente */
+}
+
+.login__input {
+  border: 2px solid #333; /* Define uma borda de 2 pixels ao redor do campo de entrada */
+  border-radius: 8px; /* Arredonda os cantos do campo */
+  color: #333; /* Define a cor do texto dentro do campo como cinza escuro */
+  font-size: 1em; /* Define o tamanho da fonte dentro do campo */
+  margin-bottom: 15px; /* Adiciona uma margem abaixo do campo de entrada */
+  max-width: 300px; /* Define a largura máxima do campo como 300 pixels */
+  outline: none; /* Remove a borda de foco padrão do navegador */
+  padding: 10px; /* Adiciona espaço interno ao campo */
+  width: 100%; /* Define a largura total do campo */
+  transition: border-color 0.3s; /* Define uma transição suave para a cor da borda */
+}
+
+.login__input:focus {
+  border-color: #b2df28; /* Altera a cor da borda ao focar no campo */
+  background-color: rgba(
+    178,
+    223,
+    40,
+    0.1
+  ); /* Adiciona um fundo levemente colorido ao focar */
+  transform: scale(1.02); /* Levemente aumenta o tamanho do campo ao focar */
+  transition: background-color 0.3s, border-color 0.3s, transform 0.2s; /* Transições suaves para cor de fundo, cor da borda e transformação */
+}
+
+.login__input:hover {
+  border-color: #00a19c; /* Altera a cor da borda ao passar o mouse sobre o campo */
+}
+
+.login__button {
+  background-color: #b2df28; /* Define a cor de fundo do botão */
+  border: none; /* Remove a borda padrão do botão */
+  border-radius: 8px; /* Arredonda os cantos do botão */
+  color: #fff; /* Define a cor do texto do botão como branco */
+  cursor: pointer; /* Muda o cursor para indicar que o botão é clicável */
+  font-size: 1.1em; /* Aumenta o tamanho da fonte do botão */
+  padding: 15px; /* Adiciona espaço interno ao botão */
+  width: 100%; /* Define a largura total do botão */
+  transition: background-color 0.3s, transform 0.2s; /* Transições suaves para cor e transformação do botão */
+}
+
+.login__button:hover {
+  background-color: #00a19c; /* Altera a cor ao passar o mouse sobre o botão */
+  transform: translateY(
+    -2px
+  ); /* Eleva ligeiramente o botão ao passar o mouse */
+}
+
+.error-message {
+  color: red; /* Define a cor da mensagem de erro como vermelha */
+  font-weight: bold; /* Define o texto como negrito */
+  margin-top: 10px; /* Adiciona uma margem acima da mensagem de erro */
+}
